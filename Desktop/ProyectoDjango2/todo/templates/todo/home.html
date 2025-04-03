@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+
+</head>
+<body>
+    
+    <h1>Lista de Tareas</h1>
+    <ul>
+        {% for tarea in tareas %}
+            <li>{{ tarea }}</li>
+            <button> <a href="{% url 'eliminar' tarea.id %}"> eliminar</a> </button>
+            <button> <a href="{% url 'editar' tarea.id %}"> editar</a> </button>
+        {% endfor %}
+    </ul>
+{% endblock %}
+</body>
+</html>
